@@ -9,5 +9,5 @@ function print() {
   document.getElementById("terminal").value += text[i];
   i += 1;
 }
-var textInterval = setInterval(print, 500);
+var textInterval = setInterval(print, 100);
 document.addEventListener("keydown",  e => { e.preventDefault(); });
