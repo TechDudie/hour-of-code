@@ -1,22 +1,13 @@
-var hostname = "terminal";
-var username = "terminal";
-var directory = "~";
-var cmd = "";
-document.addEventListener("keydown",  e => {
-  if (e.keyCode === 8)  {
-    e.preventDefault();
-  } else if (e.keyCode === 13)  {
-    e.preventDefault();
-    cmd = cmd.toLowerCase();
-    var output = run(cmd);
-    if (output == "" || output == "undefined" || output == undefined) {
-      empty();
-    } else {
-      command(output);
-    }
-    cmd = "";
-  } else {
-    cmd += String.fromCharCode(e.keyCode);
-  }
-});
-setup();
+var text = `Hour Of Code
+
+Hour Of Code is on December 12, 2021!
+
+https:/studio.code.org/courses`
+text = Object.assign([], text);
+var i = 0
+function print() {
+  document.getElementById("terminal").value += text[i];
+  i += 1;
+}
+var textInterval = setInterval(print, 500);
+document.addEventListener("keydown",  e => { e.preventDefault(); });
