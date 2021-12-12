@@ -6,8 +6,7 @@ https:/studio.code.org/courses`
 text = Object.assign([], text);
 var i = 0
 function print() {
-  document.getElementById("terminal").value += text[i];
-  i += 1;
+  if (text[i] != undefined) { document.getElementById("terminal").value += text[i]; i += 1; };
 }
 var textInterval = setInterval(print, 1);
 document.addEventListener("keydown",  e => { e.preventDefault(); });
